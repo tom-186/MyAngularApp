@@ -1,0 +1,21 @@
+
+.name{color: green;
+}
+
+.email{color: red}
+
+.date{
+    font-style: italic;
+}
+
+.comment {
+    border-style: solid;
+    max-width: 600px;
+    margin: 5px;
+    padding: 5px;
+    border-width: 1px;
+}
+
+.comment.date{
+    text-align: right;
+}

@@ -1,0 +1,14 @@
+<div *ngIf="error">
+    <p>An error occured.</p>
+    <span>{{ error }}</span>
+  </div>
+  <div *ngIf="!error">
+    <div class="comment" *ngFor = "let comment of comments">
+            <span>Comment by: </span><span class= "email">{{ comment.email }}</span><br>
+            <p class ="body">{{ comment.body }}</p><br>
+            <div class ="date">Comment published on {{ date }}</div>
+    </div>
+</div>
+
+
+
