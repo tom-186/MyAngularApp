@@ -24,8 +24,7 @@ export class CommentComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // metodo di life circle
-    // questo serve per recuperare dati
+    /* FETCH DATA */
     fetch('https://jsonplaceholder.typicode.com/comments')
      .then(response=>{
     if (!response.ok) throw Error(response.statusText)
@@ -34,13 +33,28 @@ export class CommentComponentComponent implements OnInit {
     .then((json:Array<Comment>)=>{
     this.comments = json;      
     }).catch(err => (this.error = err));
-    var today =  new Date();
-    var dd = String(today.getDate());    
+
+    /* GET DATE */
+    var date =  new Date();
+    var dd = String(date.getDate());  
+    function ordinal_suffix_of(i) {
+      var j = i % 10,
+          k = i % 100;
+      if (j == 1 && k != 11) {
+          return i + "st";
+      }
+      if (j == 2 && k != 12) {
+          return i + "nd";
+      }
+      if (j == 3 && k != 13) {
+          return i + "rd";
+      }
+      return i + "th";  }  
     const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
-    var mm = monthNames[today.getMonth()];
-    var yyyy = String(today.getFullYear());
-    var today_str = dd +' '+mm+' '+yyyy;
-    this.date = today_str;                              
+    var mm = monthNames[date.getMonth()];
+    var yyyy = String(date.getFullYear());
+    var date_str = ordinal_suffix_of(dd) +' '+mm+' '+yyyy;
+    this.date = date_str;
   }
 }

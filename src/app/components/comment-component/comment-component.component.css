@@ -2,7 +2,14 @@
 .name{color: green;
 }
 
-.email{color: red}
+.email{color: #219BC6;
+    text-decoration: none;
+    
+}
+
+.email:hover{
+    text-decoration: underline;
+}
 
 .date{
     font-style: italic;
@@ -15,7 +22,15 @@
     padding: 5px;
     border-width: 1px;
 }
+span.comment_declaration{
+    font-size: 12px;
+}
 
-.comment.date{
+div.body{
+    margin-top: 15px;
+}
+
+div.date{
     text-align: right;
+    font-size: 12px;
 }

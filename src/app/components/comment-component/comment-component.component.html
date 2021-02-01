@@ -4,9 +4,9 @@
   </div>
   <div *ngIf="!error">
     <div class="comment" *ngFor = "let comment of comments">
-            <span>Comment by: </span><span class= "email">{{ comment.email }}</span><br>
-            <p class ="body">{{ comment.body }}</p><br>
-            <div class ="date">Comment published on {{ date }}</div>
+            <span class="comment_declaration">Comment by: </span><a class= "email" href="mailto:{{comment.email}}">{{ comment.email }}</a><br>
+            <div class ="body"><span>{{ comment.body }}</span></div><br>
+            <div class ="date">Published on {{ date }}</div>
     </div>
 </div>
 
