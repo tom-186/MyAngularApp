@@ -27,12 +27,12 @@ export class CommentComponentComponent implements OnInit {
     /* FETCH DATA */
     fetch('https://jsonplaceholder.typicode.com/comments')
      .then(response=>{
-    if (!response.ok) throw Error(response.statusText)
-    return response.json();
-    })
-    .then((json:Array<Comment>)=>{
-    this.comments = json;      
-    }).catch(err => (this.error = err));
+       if (!response.ok) throw Error(response.statusText)
+       return response.json();
+     })
+     .then((json:Array<Comment>)=>{
+       this.comments = json;
+     }).catch(err => (this.error = err));
 
     /* GET DATE */
     var date =  new Date();
